@@ -9,8 +9,8 @@ import secrets
 from werkzeug.security import generate_password_hash
 from services.email_generator import send_reset_email
 
-from extensions import db, mail
-from models import User, PasswordResetToken
+from backend.core.extensions import db, mail
+from backend.models.user import User, PasswordResetToken
 
 auth_bp = Blueprint("auth", __name__)
 SECRET_KEY = secrets.token_hex(32)  #Генерация ключа, мб поместить в другое место
